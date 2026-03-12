@@ -18,6 +18,7 @@ interface PromptState {
   selections: Record<string, string[]>;
   toggleSelection: (category: string, id: string, multiSelect?: boolean) => void;
   setSelection: (category: string, ids: string[]) => void;
+  applyPreset: (presetState: Partial<PromptState>) => void;
 }
 
 export const usePromptStore = create<PromptState>((set) => ({
@@ -45,4 +46,20 @@ export const usePromptStore = create<PromptState>((set) => ({
   setSelection: (category, ids) => set((state) => ({
     selections: { ...state.selections, [category]: ids }
   })),
+  applyPreset: (presetState) => set((state) => {
+    const directKeys = ['width', 'height', 'format', 'imageType', 'platform', 'isInitialized'];
+    const newSelections = { ...state.selections };
+    const newState = { ...state };
+
+    for (const [key, value] of Object.entries(presetState)) {
+      if (directKeys.includes(key)) {
+        (newState as Record<string, unknown>)[key] = value;
+      } else {
+        newSelections[key] = value as unknown as string[]; 
+      }
+    }
+
+    newState.selections = newSelections;
+    return newState;
+  }),
 }))
