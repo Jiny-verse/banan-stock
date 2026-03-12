@@ -14,6 +14,10 @@ interface PromptState {
   setHeight: (height: number) => void;
   setFormat: (format: "JPG" | "PNG") => void;
   setImageType: (type: "Photo" | "Illustration" | "Background Texture" | "Object (PNG)") => void;
+
+  selections: Record<string, string[]>;
+  toggleSelection: (category: string, id: string, multiSelect?: boolean) => void;
+  setSelection: (category: string, ids: string[]) => void;
 }
 
 export const usePromptStore = create<PromptState>((set) => ({
@@ -29,4 +33,16 @@ export const usePromptStore = create<PromptState>((set) => ({
   setHeight: (height) => set({ height }),
   setFormat: (format) => set({ format }),
   setImageType: (type) => set({ imageType: type }),
+
+  selections: {},
+  toggleSelection: (category, id, multiSelect = false) => set((state) => {
+    const current = state.selections[category] || [];
+    if (current.includes(id)) {
+      return { selections: { ...state.selections, [category]: current.filter(x => x !== id) } };
+    }
+    return { selections: { ...state.selections, [category]: multiSelect ? [...current, id] : [id] } };
+  }),
+  setSelection: (category, ids) => set((state) => ({
+    selections: { ...state.selections, [category]: ids }
+  })),
 }))
