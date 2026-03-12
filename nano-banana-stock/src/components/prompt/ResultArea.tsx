@@ -57,8 +57,8 @@ export default function ResultArea() {
           {negative && (
             <div className="flex items-start gap-3 w-full origin-left">
               <div className="flex-1 bg-bg border-border rounded-lg p-2 relative group">
-                <span className="text-[10px] font-bold text-muted absolute -top-1.5 left-3 bg-bg px-1 rounded border border-border">Negative</span>
-                <p className="text-xs text-muted font-mono break-all max-h-16 overflow-y-auto scrollbar-hide pr-2">
+                <span className="text-[10px] font-bold text-muted-foreground absolute -top-1.5 left-3 bg-bg px-1 rounded border border-border">Negative</span>
+                <p className="text-xs text-muted-foreground font-mono break-all max-h-16 overflow-y-auto scrollbar-hide pr-2">
                   {negative}
                 </p>
               </div>
@@ -66,7 +66,7 @@ export default function ResultArea() {
                 onClick={() => handleCopy(negative, "negative")}
                 className={cn(
                   "px-4 rounded-lg font-bold text-xs transition-all border",
-                  copiedN ? "border-green-500 text-green-500" : "border-border text-muted hover:text-text"
+                  copiedN ? "border-green-500 text-green-500" : "border-border text-muted-foreground hover:text-text"
                 )}
               >
                 {copiedN ? "복사됨!" : "Copy Neg"}

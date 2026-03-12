@@ -33,7 +33,7 @@ export default function PlatformSelector() {
         ))}
       </div>
       
-      <div className="flex flex-wrap gap-2 text-xs text-muted bg-surface p-3 rounded-lg border border-border">
+      <div className="flex flex-wrap gap-2 text-xs text-muted-foreground bg-surface p-3 rounded-lg border border-border">
         <span className="px-2 py-1 bg-bg rounded-md">📐 {spec.minPx}–{spec.maxPx}px</span>
         <span className="px-2 py-1 bg-bg rounded-md">💾 Max {spec.maxMB}MB</span>
         <span className="px-2 py-1 bg-bg rounded-md">🖼 {spec.formats.join("/")}</span>

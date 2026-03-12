@@ -30,7 +30,7 @@ export default function SectionToggle({ id, title, count = 0, children, defaultO
             </span>
           )}
         </div>
-        <div className={cn("transition-transform duration-300 text-muted", isOpen ? "rotate-180" : "rotate-0")}>
+        <div className={cn("transition-transform duration-300 text-muted-foreground", isOpen ? "rotate-180" : "rotate-0")}>
           ▼
         </div>
       </button>

@@ -99,7 +99,7 @@ export default function SpecSettings() {
       
       {/* 해상도 섹션 */}
       <div className="space-y-4">
-        <label className="text-sm font-bold text-muted">해상도 & 비율</label>
+        <label className="text-sm font-bold text-muted-foreground">해상도 & 비율</label>
         
         <div className="flex flex-wrap gap-2">
           {RATIOS.map((r) => (
@@ -110,7 +110,7 @@ export default function SpecSettings() {
                 "px-3 py-1.5 rounded-lg text-sm transition-all font-bold",
                 ratio === r.label
                   ? "bg-accent text-black shadow-accent"
-                  : "bg-bg text-muted hover:text-text border border-border"
+                  : "bg-bg text-muted-foreground hover:text-text border border-border"
               )}
             >
               {r.label}
@@ -121,7 +121,7 @@ export default function SpecSettings() {
         <div className="grid grid-cols-2 gap-6">
           <div className="flex flex-col gap-2">
             <div className="flex justify-between text-sm">
-              <span className="text-muted">가로 (Width)</span>
+              <span className="text-muted-foreground">가로 (Width)</span>
               <span className="font-mono text-accent">{width}px</span>
             </div>
             <input
@@ -144,7 +144,7 @@ export default function SpecSettings() {
           </div>
           <div className="flex flex-col gap-2">
             <div className="flex justify-between text-sm">
-              <span className="text-muted">세로 (Height)</span>
+              <span className="text-muted-foreground">세로 (Height)</span>
               <span className="font-mono text-accent">{height}px</span>
             </div>
             <input
@@ -171,7 +171,7 @@ export default function SpecSettings() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-border">
         {/* 포맷 섹션 */}
         <div className="space-y-3">
-          <label className="text-sm font-bold text-muted">출력 포맷</label>
+          <label className="text-sm font-bold text-muted-foreground">출력 포맷</label>
           <div className="flex gap-4">
             <label className="flex items-center gap-2 cursor-pointer pr-4">
               <input
@@ -207,7 +207,7 @@ export default function SpecSettings() {
 
         {/* 이미지 타입 섹션 */}
         <div className="space-y-3">
-          <label className="text-sm font-bold text-muted">기본 이미지 타입</label>
+          <label className="text-sm font-bold text-muted-foreground">기본 이미지 타입</label>
           <div className="flex flex-col gap-2">
             {IMAGE_TYPES.map((t) => (
               <label key={t} className="flex items-center gap-2 cursor-pointer text-sm">

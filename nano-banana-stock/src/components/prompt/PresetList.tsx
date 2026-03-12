@@ -34,7 +34,7 @@ export default function PresetList() {
         <h2 className="text-lg font-display font-bold text-text">추천 프리셋 (⚡ Quick Start)</h2>
         <button 
           onClick={resetState}
-          className="text-xs font-bold text-muted hover:text-accent border border-border px-3 py-1.5 rounded-lg bg-surface hover:border-accent transition-all flex items-center gap-1 active:scale-95 shadow-sm"
+          className="text-xs font-bold text-muted-foreground hover:text-accent border border-border px-3 py-1.5 rounded-lg bg-surface hover:border-accent transition-all flex items-center gap-1 active:scale-95 shadow-sm"
         >
           <span className="text-sm">🔄</span>
           <span>초기화</span>
@@ -49,10 +49,10 @@ export default function PresetList() {
           >
             <div className="flex items-center justify-between w-full">
               <span className="text-4xl group-hover:scale-110 transition-transform origin-bottom-left">{preset.emoji}</span>
-              <span className="text-[10px] font-bold text-muted bg-bg px-2 py-1 rounded-full border border-border">{preset.category}</span>
+              <span className="text-[10px] font-bold text-muted-foreground bg-bg px-2 py-1 rounded-full border border-border">{preset.category}</span>
             </div>
             <span className="font-bold text-base mt-3 text-text group-hover:text-accent transition-colors">{preset.label}</span>
-            <span className="text-xs text-muted line-clamp-2 mt-1 leading-relaxed">{preset.description}</span>
+            <span className="text-xs text-muted-foreground line-clamp-2 mt-1 leading-relaxed">{preset.description}</span>
           </button>
         ))}
       </div>

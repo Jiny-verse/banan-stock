@@ -53,7 +53,7 @@ export default function PromptBuilder() {
         <div className="flex flex-col gap-6">
           {Object.entries(bgGroups).map(([group, opts]) => (
             <div key={group} className="space-y-2">
-              <h4 className="text-sm font-bold text-muted px-1">{group}</h4>
+              <h4 className="text-sm font-bold text-muted-foreground px-1">{group}</h4>
               <OptionGrid category="backgrounds" options={opts} multiSelect={true} />
             </div>
           ))}
@@ -67,15 +67,15 @@ export default function PromptBuilder() {
       >
         <div className="flex flex-col gap-6">
           <div className="space-y-2">
-            <h4 className="text-sm font-bold text-muted px-1">바디 (Body)</h4>
+            <h4 className="text-sm font-bold text-muted-foreground px-1">바디 (Body)</h4>
             <OptionGrid category="camera_bodies" options={CAMERA_BODIES} multiSelect={false} />
           </div>
           <div className="space-y-2">
-            <h4 className="text-sm font-bold text-muted px-1">렌즈 (Lens)</h4>
+            <h4 className="text-sm font-bold text-muted-foreground px-1">렌즈 (Lens)</h4>
             <OptionGrid category="camera_lenses" options={CAMERA_LENSES} multiSelect={false} />
           </div>
           <div className="space-y-2">
-            <h4 className="text-sm font-bold text-muted px-1">조리개 (Aperture)</h4>
+            <h4 className="text-sm font-bold text-muted-foreground px-1">조리개 (Aperture)</h4>
             <OptionGrid category="camera_apertures" options={CAMERA_APERTURE} multiSelect={false} />
           </div>
         </div>

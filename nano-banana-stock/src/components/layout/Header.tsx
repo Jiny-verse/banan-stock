@@ -14,7 +14,7 @@ export default function Header() {
             href="https://github.com/Jiny-verse/banan-stock"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-mono text-muted border border-border px-3 py-1 rounded-full bg-surface hover:text-accent hover:border-accent transition-colors"
+            className="text-xs font-mono text-muted-foreground border border-border px-3 py-1 rounded-full bg-surface hover:text-accent hover:border-accent transition-colors"
           >
             v1.0.0
           </a>

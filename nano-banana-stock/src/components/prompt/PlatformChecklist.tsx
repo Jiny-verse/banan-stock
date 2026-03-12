@@ -8,7 +8,7 @@ export default function PlatformChecklist() {
   if (platform === "both") return null;
 
   return (
-    <div className="mt-3 text-xs text-muted/80 bg-bg p-3 rounded-lg border border-border flex items-start gap-2 shadow-sm">
+    <div className="mt-3 text-xs text-muted-foreground/80 bg-bg p-3 rounded-lg border border-border flex items-start gap-2 shadow-sm">
       <span className="text-blue-400 text-sm mt-0.5">ℹ️</span>
       <p className="leading-snug">
         {platform === "adobe" 

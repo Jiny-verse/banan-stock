@@ -19,12 +19,12 @@ export default function StepIndicator() {
   };
 
   return (
-    <div className="flex items-center justify-between py-6 max-w-2xl mx-auto mb-8 text-sm font-bold text-muted" id="step-1">
+    <div className="flex items-center justify-between py-6 max-w-2xl mx-auto mb-8 text-sm font-bold text-muted-foreground" id="step-1">
       {steps.map((step, idx) => (
         <button 
           key={step.target} 
           onClick={() => handleScroll(step.target)}
-          className={`hover:text-text transition-colors ${idx === 0 ? "text-accent border-b-2 border-accent pb-1 hover:text-accent" : "text-muted"}`}
+          className={`hover:text-text transition-colors ${idx === 0 ? "text-accent border-b-2 border-accent pb-1 hover:text-accent" : "text-muted-foreground"}`}
         >
           {step.label}
         </button>

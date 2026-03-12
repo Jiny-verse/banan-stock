@@ -26,7 +26,7 @@ export default function OptionGrid({ category, options, multiSelect = false }: O
               "px-3 py-1.5 rounded-full text-sm font-semibold transition-all border",
               isSelected
                 ? "bg-accent border-accent text-black shadow-md shadow-accent/20"
-                : "bg-surface border-border text-muted hover:border-accent/50 hover:text-text"
+                : "bg-surface border-border text-muted-foreground hover:border-accent/50 hover:text-text"
             )}
           >
             {opt.label}
