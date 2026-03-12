@@ -38,7 +38,7 @@ export default function ResultArea() {
           <div className="flex items-start gap-3 w-full">
             <div className="flex-1 bg-bg border border-border rounded-lg p-3 relative group">
               <span className="text-xs font-bold text-accent absolute -top-2 left-3 bg-bg px-1 rounded">Prompt</span>
-              <p className="text-sm text-text font-mono break-all line-clamp-2 min-h-[40px]">
+              <p className="text-sm text-text font-mono break-all max-h-24 overflow-y-auto min-h-[40px] scrollbar-hide pr-2">
                 {prompt || "옵션을 선택하면 프롬프트가 자동 생성됩니다."}
               </p>
             </div>
@@ -55,10 +55,10 @@ export default function ResultArea() {
 
           {/* 부정 프롬프트 영역 (존재할 때만 표시) */}
           {negative && (
-            <div className="flex items-start gap-3 w-full opacity-80 scale-95 origin-left">
+            <div className="flex items-start gap-3 w-full origin-left">
               <div className="flex-1 bg-bg border-border rounded-lg p-2 relative group">
                 <span className="text-[10px] font-bold text-muted absolute -top-1.5 left-3 bg-bg px-1 rounded border border-border">Negative</span>
-                <p className="text-xs text-muted font-mono break-all line-clamp-1">
+                <p className="text-xs text-muted font-mono break-all max-h-16 overflow-y-auto scrollbar-hide pr-2">
                   {negative}
                 </p>
               </div>

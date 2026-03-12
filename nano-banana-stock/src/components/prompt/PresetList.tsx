@@ -5,7 +5,7 @@ import { PRESETS } from "@/data/presets";
 import { Preset } from "@/types";
 
 export default function PresetList() {
-  const { setPlatform, applyPreset, setWidth, setHeight, setFormat, setImageType } = usePromptStore();
+  const { setPlatform, applyPreset, setWidth, setHeight, setFormat, setImageType, resetState } = usePromptStore();
 
   const handlePresetClick = (preset: Preset) => {
     // 1. 플랫폼 변경
@@ -30,7 +30,16 @@ export default function PresetList() {
 
   return (
     <div className="flex flex-col gap-3 w-full">
-      <h2 className="text-lg font-display font-bold px-1 text-text">추천 프리셋 (⚡ Quick Start)</h2>
+      <div className="flex items-center justify-between px-1 mb-1">
+        <h2 className="text-lg font-display font-bold text-text">추천 프리셋 (⚡ Quick Start)</h2>
+        <button 
+          onClick={resetState}
+          className="text-xs font-bold text-muted hover:text-accent border border-border px-3 py-1.5 rounded-lg bg-surface hover:border-accent transition-all flex items-center gap-1 active:scale-95 shadow-sm"
+        >
+          <span className="text-sm">🔄</span>
+          <span>초기화</span>
+        </button>
+      </div>
       <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide snap-x">
         {PRESETS.map((preset) => (
           <button

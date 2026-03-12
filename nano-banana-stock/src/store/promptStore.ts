@@ -19,6 +19,7 @@ interface PromptState {
   toggleSelection: (category: string, id: string, multiSelect?: boolean) => void;
   setSelection: (category: string, ids: string[]) => void;
   applyPreset: (presetState: Partial<PromptState>) => void;
+  resetState: () => void;
 }
 
 export const usePromptStore = create<PromptState>((set) => ({
@@ -62,4 +63,12 @@ export const usePromptStore = create<PromptState>((set) => ({
     newState.selections = newSelections;
     return newState;
   }),
+  resetState: () => set((state) => ({
+    ...state,
+    width: 2500,
+    height: 2500,
+    format: "JPG",
+    imageType: "Photo",
+    selections: {},
+  })),
 }))

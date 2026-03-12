@@ -11,11 +11,11 @@ export default function Home() {
       <StepIndicator />
       <section className="flex flex-col gap-8 max-w-2xl mx-auto mb-32">
         <PresetList />
-        <PlatformSelector />
-        <SpecSettings />
-        <PromptBuilder />
+        <div id="step-1"><PlatformSelector /></div>
+        <div id="step-2"><SpecSettings /></div>
+        <div id="step-3"><PromptBuilder /></div>
       </section>
-      <ResultArea />
+      <div id="step-4"><ResultArea /></div>
     </main>
   );
 }
