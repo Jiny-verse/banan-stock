@@ -4,6 +4,7 @@ import { usePromptStore } from "@/store/promptStore";
 import { generatePrompt } from "@/lib/promptEngine";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import PlatformChecklist from "./PlatformChecklist";
 
 export default function ResultArea() {
   const state = usePromptStore();
@@ -72,6 +73,8 @@ export default function ResultArea() {
               </button>
             </div>
           )}
+          
+          <PlatformChecklist />
         </div>
       </div>
     </>
